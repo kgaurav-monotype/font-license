@@ -4,7 +4,7 @@ export const Data1 = [
         accepted_by: { value: 'Tom', type: 'text' },
         end_date: { value: 'Jan 16, 2023', type: 'text' },
         source: { value: 'User', type: 'text' },
-        in_production: { isOn: false, type: 'switch' }
+        in_production: { isOn: true, type: 'switch' }
     },
     {
         font_style: { value: 'Arial® Regular', type: 'text' },
@@ -18,21 +18,21 @@ export const Data1 = [
         accepted_by: { value: 'Amber', type: 'text' },
         end_date: { value: 'Apr 13, 2024', type: 'text' },
         source: { value: 'User', type: 'text' },
-        in_production: { isOn: false, type: 'switch' }
+        in_production: { isOn: true, type: 'switch' }
     },
     {
         font_style: { value: 'Compacta™ Bold Italic', type: 'text' },
         accepted_by: { value: 'Tom', type: 'text' },
         end_date: { value: 'Jul 16, 2023', type: 'text' },
         source: { value: 'User', type: 'text' },
-        in_production: { isOn: false, type: 'switch' }
+        in_production: { isOn: true, type: 'switch' }
     },
     {
         font_style: { value: 'DIN® Next Ultra Light', type: 'text' },
         accepted_by: { value: 'Tom', type: 'text' },
         end_date: { value: 'Apr 16, 2023', type: 'text' },
         source: { value: 'User', type: 'text' },
-        in_production: { isOn: false, type: 'switch' }
+        in_production: { isOn: true, type: 'switch' }
     },
     {
         font_style: { value: 'DIN® Next Ultra Light Italic', type: 'text' },
@@ -46,7 +46,7 @@ export const Data1 = [
         accepted_by: { value: 'Tom', type: 'text' },
         end_date: { value: 'Jul 22, 2023', type: 'text' },
         source: { value: 'User', type: 'text' },
-        in_production: { isOn: false, type: 'switch' }
+        in_production: { isOn: true, type: 'switch' }
     },
     {
         font_style: { value: 'DIN® Next Light Italic', type: 'text' },
@@ -60,7 +60,7 @@ export const Data1 = [
         accepted_by: { value: 'Tom', type: 'text' },
         end_date: { value: 'Jan 16, 2023', type: 'text' },
         source: { value: 'User', type: 'text' },
-        in_production: { isOn: false, type: 'switch' }
+        in_production: { isOn: true, type: 'switch' }
     },
     {
         font_style: { value: 'Gill Sans® MT Cyrillic Medium', type: 'text' },
@@ -74,14 +74,14 @@ export const Data1 = [
         accepted_by: { value: 'Tom', type: 'text' },
         end_date: { value: 'Mar 30, 2023', type: 'text' },
         source: { value: 'User', type: 'text' },
-        in_production: { isOn: false, type: 'switch' }
+        in_production: { isOn: true, type: 'switch' }
     },
     {
         font_style: { value: 'M XiangHe Hei® SC Pro', type: 'text' },
         accepted_by: { value: 'Tom', type: 'text' },
         end_date: { value: 'Feb 14, 2024', type: 'text' },
         source: { value: 'User', type: 'text' },
-        in_production: { isOn: false, type: 'switch' }
+        in_production: { isOn: true, type: 'switch' }
     },
     {
         font_style: { value: 'M XiangHe Hei® TC', type: 'text' },

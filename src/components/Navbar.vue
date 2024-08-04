@@ -15,19 +15,21 @@ export default {
 
 <template>
     <div class="navbar p-6">
-        <span class="logo">M.</span>
-        <div class="flex items-center relative">
-            <input type="text" class="searchbar rounded-sm" placeholder="Search for fonts, designers & tags...">
-            <MtIconSearch class="absolute right-4" color="spirits--600"></MtIconSearch>
-        </div>
-        <div class="flex gap-6 px-20">
-            <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">Dashboard</MtTypography>
-            <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">Browse</MtTypography>
-            <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">My library</MtTypography>
-            <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">Resources</MtTypography>
-            <MtTypography class="relative cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--50' }">Manage
-                <span class="absolute bottom-line"></span>
-            </MtTypography>
+        <div class="flex gap-20 items-center">
+            <span class="logo">M.</span>
+            <div class="flex items-center relative">
+                <input type="text" class="searchbar rounded-sm" placeholder="Search for fonts, designers & tags...">
+                <MtIconSearch class="absolute right-4" color="spirits--600"></MtIconSearch>
+            </div>
+            <div class="flex gap-6">
+                <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">Dashboard</MtTypography>
+                <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">Browse</MtTypography>
+                <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">My library</MtTypography>
+                <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">Resources</MtTypography>
+                <MtTypography class="relative cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--50' }">Manage
+                    <span class="absolute bottom-line"></span>
+                </MtTypography>
+            </div>
         </div>
         <div class="flex gap-6 items-center ">
             <MtIconAgreementsCopy size="md" class="cursor-pointer" color="spirits--500">
@@ -65,7 +67,6 @@ export default {
     outline: none;
     width: 400px;
     height: 40px;
-    margin-left: -100px;
 }
 .bottom-line {
     width: 100%;

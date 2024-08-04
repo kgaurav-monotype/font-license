@@ -2,6 +2,10 @@
 import { ref } from 'vue';
 import successImage from '../assets/success.jpg';
 import VueTailwindDatepicker from "vue-tailwind-datepicker";
+import dayjs from 'dayjs';
+import 'dayjs/locale/en';
+
+dayjs.locale('en');
 const dateValue = ref([])
 const formatter = ref({
   date: 'MMM DD, YYYY',
@@ -104,6 +108,7 @@ export default {
             this.isSidebarOpen = false;
             this.isInnerSidebarOpen = false;
             this.isModalOpen = false;
+            this.showBottomBar = false;
         },
         clickOnHelveticaNowMT() {
             this.isInnerSidebarOpen = true;
@@ -137,7 +142,7 @@ export default {
         },
         confirmSelection() {
             this.selectedFonts.forEach(font => {
-                font.end_date.value = this.dateValue.endDate;
+                font.end_date.value = this.dateValue.endDate || this.currentDate;
             });
             this.Data1.unshift(...this.selectedFonts);
             this.isFontConfirmed = true;
@@ -247,10 +252,22 @@ export default {
         confirmActivate(row) {
             this.isSwitchTrueModalOpen = true;
             this.isSwitchTrueActivated = false;
+            this.isConformFontListSubmitted = false;
+            eventBus.emit('updateNotification', {
+                heading: 'Confirmed production font list is not submitted.',
+                message: 'Additional text if needed',
+                status: 'warning'
+            });
         },
         confirmDeactivate() {
             this.isSwitchFalseModalOpen = true;
             this.isSwitchFalseActivated = false;
+            this.isConformFontListSubmitted = false;
+            eventBus.emit('updateNotification', {
+                heading: 'Confirmed production font list is not submitted.',
+                message: 'Additional text if needed',
+                status: 'warning'
+            });
         },
         closeSwitchTrueModal() {
             this.isSwitchTrueModalOpen = false;
@@ -259,6 +276,15 @@ export default {
         closeSwitchFalseModal() {
             this.isSwitchFalseModalOpen = false;
             this.isSwitchFalseActivated = false;
+        },
+        exportList() {
+            const link = document.createElement("a");
+            link.href = 'https://kgaurav-monotype.github.io/font-license/assets/SampleReport.xlsx';
+            link.setAttribute("download", "SampleReport.xlsx");
+            link.setAttribute("target", "_blank");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         },
 
     },
@@ -318,7 +344,7 @@ export default {
                         <MtIconArrowCaret slot="icon-end" rotate="down"></MtIconArrowCaret>
                         In production
                     </MtButton>
-                    <MtButton class="combobox" square="true" color="darkgrey" variant="ghost">
+                    <MtButton class="combobox" @handleclick="exportList" square="true" color="darkgrey" variant="ghost">
                         <MtIconDownload slot="icon-start" color="blue-duck--500"></MtIconDownload>
                         Export List
                     </MtButton>
