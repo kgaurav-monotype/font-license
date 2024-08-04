@@ -125,6 +125,9 @@ export default {
             <template v-if="row[heading.key].type === 'text'">
               <MtTypography v-bind="{ tag: 'span', variant: index === 0 ? 'body2--medium' : 'body2--regular' }"><span v-html="row[heading.key].value"></span></MtTypography>
             </template>
+            <template v-if="row[heading.key].type === 'link'">
+              <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body2--medium', color: 'blue-duck--500' }">Export report</MtTypography>
+            </template>
             <template v-else-if="row[heading.key].type === 'icon'">
               <div class="flex items-end gap-2">
                 <MtIconTypeList color="spirits--600"></MtIconTypeList>

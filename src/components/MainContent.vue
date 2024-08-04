@@ -15,8 +15,8 @@ import vClickOutside from 'click-outside-vue3'
 import ExpandableBar from './ExpandableBar.vue';
 import DataTable from './DataTable.vue';
 import LearnMoreAboutFonts from './LearnMoreAboutFonts.vue';
-import { Data1, Data2, TableHeadings1, TableHeadings2, imageThumbnails, HelveticaNowMT } from '@/data/data.js';
-import { MtTypography, MtButton, MtIconClose, MtIconArrowLong, MtIconMonotype, MtIconProductionStroke, MtIconAdd, MtIconDownload, MtIconArrowCaret, MtIconSearch } from '@antiqua-design-system/vue-components';
+import { Data1, Data2, Data3, TableHeadings1, TableHeadings2, TableHeadings3, imageThumbnails, HelveticaNowMT } from '@/data/data.js';
+import { MtTypography, MtButton, MtIconTypeWeb, MtIconSync, MtIconTypeList, MtIconClose, MtIconArrowLong, MtIconMonotype, MtIconProductionStroke, MtIconAdd, MtIconDownload, MtIconArrowCaret, MtIconSearch, MtIconWeb } from '@antiqua-design-system/vue-components';
 
 import eventBus from '../lib/eventBus';
 
@@ -41,6 +41,9 @@ export default {
         MtIconMonotype,
         MtIconArrowLong,
         VueTailwindDatepicker,
+        MtIconTypeWeb,
+        MtIconTypeList,
+        MtIconSync,
     },
     props: {
         activeTab: {
@@ -81,6 +84,8 @@ export default {
             // Font in review data
             Data2,
             TableHeadings2,
+            Data3,
+            TableHeadings3,
             HelveticaNowMT,
             selectedFonts: [],
             dateValue: null,
@@ -376,6 +381,56 @@ export default {
             <DataTable :data="Data2" :tableHeadings="TableHeadings2" @accept-clicked="openAcceptModal" @deny-clicked="openDenyModal" />
             <LearnMoreAboutFonts />
         </div>
+    </div>
+    <div v-else-if="activeLink === 'Companies'">
+        <div class="heading-wrapper p-6">
+            <MtTypography v-bind="{ tag: 'h2', variant: 'heading6--medium' }">Wayne Enterprises</MtTypography>
+        </div>
+        <div class="heading-wrapper p-6">
+            <MtTypography v-bind="{ tag: 'h2', variant: 'heading6--medium' }">Other reports</MtTypography>
+        </div>
+        <div class="card-wrapper flex">
+                <div class="card flex flex-col gap-3 flex-1 p-6">
+                    <div class="flex flex-row gap-4 items-center">
+                        <span class="flex items-center justify-center w-12 h-12 p-2 rounded-lg" style="background-color: var(--mt-color--magneton--50);">
+                            <MtIconSync size="md" color="magneton--500"></MtIconSync>
+                        </span>
+                        <div class="flex flex-col">
+                            <MtTypography v-bind="{ tag: 'span', variant: 'micro2--regular' }">Last updated: 24/07/2023</MtTypography>
+                            <MtTypography v-bind="{ tag: 'h4', variant: 'heading7--medium' }">Sync & Downloads</MtTypography>
+                        </div>
+                    </div>
+                    <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body2--medium', color: 'blue-duck--500' }">View report</MtTypography>
+                </div>
+                <div class="card flex flex-col gap-3 flex-1 p-6">
+                    <div class="flex flex-row gap-4 items-center">
+                        <span class="flex items-center justify-center w-12 h-12 p-2 rounded-lg" style="background-color: var(--mt-color--taco-yellow--50);">
+                            <MtIconTypeList size="md" color="taco-yellow--500"></MtIconTypeList>
+                        </span>
+                        <div class="flex flex-col">
+                            <MtTypography v-bind="{ tag: 'span', variant: 'micro2--regular' }">Last updated: 10/12/2023</MtTypography>
+                            <MtTypography v-bind="{ tag: 'h4', variant: 'heading7--medium' }">My library report</MtTypography>
+                        </div>
+                    </div>
+                    <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body2--medium', color: 'blue-duck--500' }">View report</MtTypography>
+                </div>
+                <div class="card flex flex-col gap-3 flex-1 p-6">
+                    <div class="flex flex-row gap-4 items-center">
+                        <span class="flex items-center justify-center w-12 h-12 p-2 rounded-lg" style="background-color: var(--mt-color--turtle-green--50);">
+                            <MtIconTypeWeb size="md" color="turtle-green--500"></MtIconTypeWeb>
+                        </span>
+                        <div class="flex flex-col">
+                            <MtTypography v-bind="{ tag: 'span', variant: 'micro2--regular' }">Last updated: 14/05/2024</MtTypography>
+                            <MtTypography v-bind="{ tag: 'h4', variant: 'heading7--medium' }">Web font report</MtTypography>
+                        </div>
+                    </div>
+                    <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body2--medium', color: 'blue-duck--500' }">View report</MtTypography>
+                </div>
+        </div>
+        <div class="px-6 pt-4 pb-0">
+            <MtTypography v-bind="{ tag: 'h5', variant: 'heading6--medium' }">Quarterly reports</MtTypography>
+        </div>
+        <DataTable :data="Data3" :tableHeadings="TableHeadings3" />
     </div>
     <div v-else="activeLink !== 'Font licensing'" class="p-8">
         <MtTypography v-bind="{ tag: 'h2', variant: 'heading6--medium' }"></MtTypography>
@@ -681,6 +736,13 @@ export default {
     height: 88px;
     padding: var(--mt-spacing-unit--lg);
     border-bottom: 1px solid var(--mt-color--spirits--300);
+}
+
+.card-wrapper {
+    border-bottom: 1px solid var(--mt-color--spirits--300);
+    & .card:not(:first-child) {
+        border-left: 1px solid var(--mt-color--spirits--300);
+    }
 }
 
 .tab-wrapper {

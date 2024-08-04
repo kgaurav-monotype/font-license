@@ -19,6 +19,7 @@
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "vue": "^3.4.31",
+    "vue-router": "^4.4.2",
     "vue-tailwind-datepicker": "^1.7.3"
   },
   "devDependencies": {

@@ -2,15 +2,28 @@
 import { MtTypography } from '@antiqua-design-system/vue-components';
 
 export default {
+  props: {
+    heading: {
+      type: String,
+      default: 'The Rebel Alliance',
+    },
+    links: {
+      type: Array,
+      default: () => ['Overview', 'Users', 'Roles', 'Teams', 'Divisions', 'SSO', 'Tags', 'Usage', 'Imported fonts', 'Font licensing', 'Settings'],
+    },
+    activeLink: {
+      type: String,
+      default: 'Font licensing',
+    },
+  },
   data() {
     return {
-      links: ['Overview', 'Users', 'Roles', 'Teams', 'Divisions', 'SSO', 'Tags', 'Usage', 'Imported fonts', 'Font licensing', 'Settings'],
-      activeLink: 'Font licensing',
+      currentActiveLink: this.activeLink,
     };
   },
   methods: {
     selectLink(link) {
-      this.activeLink = link;
+      this.currentActiveLink = link;
       this.$emit('link-selected', link);
     }
   },
@@ -23,10 +36,10 @@ export default {
 
 <template>
   <header class="wrapper">
-    <MtTypography v-bind="{ tag: 'h1', variant: 'heading7--bold' }">The Rebel Alliance</MtTypography>
+    <MtTypography v-bind="{ tag: 'h1', variant: 'heading7--bold' }">{{ heading }}</MtTypography>
     <nav class="space-x-4">
       <a v-for="link in links" :key="link" href="#" class="tab-link"
-        :class="{ 'tab-link--active': activeLink === link }" @click="selectLink(link)">
+        :class="{ 'tab-link--active': currentActiveLink === link }" @click="selectLink(link)">
         <MtTypography v-bind="{ tag: 'span', variant: 'body1--medium' }">{{ link }}</MtTypography>
       </a>
     </nav>
@@ -45,6 +58,10 @@ export default {
   position: sticky;
   top: 100px;
   z-index: 50;
+}
+
+body:not(.notification) .wrapper {
+  top: 0;
 }
 
 .tab-link {

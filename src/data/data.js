@@ -160,6 +160,70 @@ export const TableHeadings2 = [
     { key: 'waiting_for_approval', label: 'Waiting for approval', sort: false },
 ];
 
+export const Data3 = [
+    {
+        report_name: { value: 'Report Q4', type: 'text' },
+        submitted_by: { value: 'Admin name', type: 'text' },
+        date: { value: 'Jan 16, 2023', type: 'text' },
+        action: { type: 'link' }
+    },
+    {
+        report_name: { value: 'Report Q3', type: 'text' },
+        submitted_by: { value: 'Admin name', type: 'text' },
+        date: { value: 'Oct 26, 2023', type: 'text' },
+        action: { type: 'link' }
+    },
+    {
+        report_name: { value: 'Report Q2', type: 'text' },
+        submitted_by: { value: 'Admin name', type: 'text' },
+        date: { value: 'Apr 07, 2024', type: 'text' },
+        action: { type: 'link' }
+    },
+    {
+        report_name: { value: 'Report Q1', type: 'text' },
+        submitted_by: { value: 'Admin name', type: 'text' },
+        date: { value: 'Mar 10, 2023', type: 'text' },
+        action: { type: 'link' }
+    },
+    {
+        report_name: { value: 'Report Q4', type: 'text' },
+        submitted_by: { value: 'Admin name', type: 'text' },
+        date: { value: 'Jan 16, 2023', type: 'text' },
+        action: { type: 'link' }
+    },
+    {
+        report_name: { value: 'Report Q3', type: 'text' },
+        submitted_by: { value: 'Admin name', type: 'text' },
+        date: { value: 'Oct 26, 2023', type: 'text' },
+        action: { type: 'link' }
+    },
+    {
+        report_name: { value: 'Report Q2', type: 'text' },
+        submitted_by: { value: 'Admin name', type: 'text' },
+        date: { value: 'Apr 07, 2024', type: 'text' },
+        action: { type: 'link' }
+    },
+    {
+        report_name: { value: 'Report Q1', type: 'text' },
+        submitted_by: { value: 'Admin name', type: 'text' },
+        date: { value: 'Mar 10, 2023', type: 'text' },
+        action: { type: 'link' }
+    },
+    {
+        report_name: { value: 'Report Q3', type: 'text' },
+        submitted_by: { value: 'Admin name', type: 'text' },
+        date: { value: 'Oct 26, 2023', type: 'text' },
+        action: { type: 'link' }
+    },
+];
+
+export const TableHeadings3 = [
+    { key: 'report_name', label: 'Report name', sort: true },
+    { key: 'submitted_by', label: 'Submitted by', sort: true },
+    { key: 'date', label: 'Date', sort: true },
+    { key: 'action', label: 'Action', sort: false },
+];
+
 export const imageThumbnails = [
     'https://cdn.myfonts.net/cdn-cgi/image/width=417,height=208,fit=contain,format=auto/images/pim/10004/u4plJV3ZXOhMeZghHo0xIflx_5d19dabcc1af9de17d071acb14982b6a.png',
     'https://cdn.myfonts.net/cdn-cgi/image/width=417,height=208,fit=contain,format=auto/images/pim/10004/u4plJV3ZXOhMeZghHo0xIflx_8c609a57c3f74044d9d39e9e81210a82.png',

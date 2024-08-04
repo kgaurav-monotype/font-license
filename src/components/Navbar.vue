@@ -9,7 +9,12 @@ export default {
     MtIconSearch,
     MtIconAgreementsCopy,
     MtIconReload,
-  }
+  },
+  methods: {
+    goToCompany() {
+      this.$router.push('/company');
+    },
+  },
 };
 </script>
 
@@ -26,7 +31,7 @@ export default {
                 <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">Browse</MtTypography>
                 <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">My library</MtTypography>
                 <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">Resources</MtTypography>
-                <MtTypography class="relative cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--50' }">Manage
+                <MtTypography @click="goToCompany" class="relative cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--50' }">Manage
                     <span class="absolute bottom-line"></span>
                 </MtTypography>
             </div>
