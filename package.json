@@ -1,0 +1,30 @@
+{
+  "name": "font-licensing-vue",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@antiqua-design-system/vue-components": "^1.0.0",
+    "@vueuse/core": "^10.11.0",
+    "class-variance-authority": "^0.7.0",
+    "click-outside-vue3": "^4.0.1",
+    "clsx": "^2.1.1",
+    "mitt": "^3.0.1",
+    "radix-vue": "^1.9.2",
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7",
+    "vue": "^3.4.31",
+    "vue-tailwind-datepicker": "^1.7.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "autoprefixer": "^10.4.19",
+    "tailwindcss": "^3.4.7",
+    "vite": "^5.3.4"
+  }
+}
