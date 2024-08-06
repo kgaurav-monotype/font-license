@@ -55,7 +55,7 @@ export default {
   background-color: var(--mt-color--spirits--50);
   border-bottom: 1px solid var(--mt-color--spirits--300);
   height: 65px;
-  transition: height .3s ease-out;
+  transition: height .3s ease-out;;
 }
 
 .thumbnails {

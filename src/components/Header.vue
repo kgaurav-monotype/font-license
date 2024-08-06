@@ -5,7 +5,7 @@ export default {
   props: {
     heading: {
       type: String,
-      default: 'The Rebel Alliance',
+      default: 'Riot Games',
     },
     links: {
       type: Array,
@@ -55,13 +55,6 @@ export default {
   align-items: center;
   padding: var(--mt-spacing-unit--xl) var(--mt-spacing-unit--lg);
   border: 1px solid var(--mt-color--spirits--300);
-  position: sticky;
-  top: 100px;
-  z-index: 50;
-}
-
-body:not(.notification) .wrapper {
-  top: 0;
 }
 
 .tab-link {

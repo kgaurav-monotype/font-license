@@ -15,7 +15,7 @@ import vClickOutside from 'click-outside-vue3'
 import ExpandableBar from './ExpandableBar.vue';
 import DataTable from './DataTable.vue';
 import LearnMoreAboutFonts from './LearnMoreAboutFonts.vue';
-import { Data1, Data2, Data3, Data4, TableHeadings1, TableHeadings2, TableHeadings3, imageThumbnails, HelveticaNowMT } from '@/data/data.js';
+import { Data3, Data5, Data6, TableHeadings1, TableHeadings2, TableHeadings3, imageThumbnails, HelveticaNowMT } from '@/data/data.js';
 import { MtTypography, MtButton, MtIconTypeWeb, MtIconSync, MtIconTypeList, MtIconClose, MtIconArrowLong, MtIconMonotype, MtIconProductionStroke, MtIconAdd, MtIconDownload, MtIconArrowCaret, MtIconSearch, MtIconWeb } from '@antiqua-design-system/vue-components';
 
 import eventBus from '../lib/eventBus';
@@ -83,14 +83,13 @@ export default {
             activeTab: 'Confirmed production fonts',
             imageThumbnails,
             // Confirmed production fonts data
-            Data1,
+            Data6,
             TableHeadings1,
             // Font in review data
-            Data2,
+            Data5,
             TableHeadings2,
             Data3,
             TableHeadings3,
-            Data4,
             HelveticaNowMT,
             selectedFonts: [],
             dateValue: null,
@@ -154,7 +153,7 @@ export default {
             this.selectedFonts.forEach(font => {
                 font.end_date.value = this.dateValue.endDate || this.currentDate;
             });
-            this.Data1.unshift(...this.selectedFonts);
+            this.Data6.unshift(...this.selectedFonts);
             this.isFontConfirmed = true;
             this.showBottomBar = false;
             this.isSidebarOpen = false;
@@ -206,16 +205,16 @@ export default {
         onAcceptDone() {
             this.isAcceptFontModalOpen = false;
             this.isSuccessfullyAdded = false;
-            this.Data1.unshift({
+            this.Data6.unshift({
                 font_style: { value: `${this.selectedRow.font_style.value} <span class="tag">New</span>`, type: 'text' },
                 accepted_by: { value: 'Tony', type: 'text' },
                 end_date: { value: this.currentDate, type: 'text' },
                 source: { value: 'User', type: 'text' },
                 in_production: { isOn: true, type: 'switch' }
             });
-            const index = this.Data2.findIndex((item) => item.font_style.value === this.selectedRow.font_style.value);
+            const index = this.Data5.findIndex((item) => item.font_style.value === this.selectedRow.font_style.value);
             if (index > -1) {
-                this.Data2.splice(index, 1);
+                this.Data5.splice(index, 1);
             }
             this.isConformFontListSubmitted = false;
             eventBus.emit('updateNotification', {
@@ -243,9 +242,9 @@ export default {
         onDenyDone() {
             this.isDenyFontModalOpen = false;
             this.isSuccessfullyRemoved = false;
-            const index = this.Data2.findIndex((item) => item.font_style.value === this.selectedRow.font_style.value);
+            const index = this.Data5.findIndex((item) => item.font_style.value === this.selectedRow.font_style.value);
             if (index > -1) {
-                this.Data2.splice(index, 1);
+                this.Data5.splice(index, 1);
             }
             this.isConformFontListSubmitted = false;
         },
@@ -342,7 +341,7 @@ export default {
             <a v-for="tab in tabs" :key="tab" href="#" class="tab mx-5 py-4"
                 :class="{ 'tab--active': activeTab === tab }" @click="selectTab(tab)">
                 <MtTypography v-bind="{ tag: 'span', variant: 'body1--regular' }">{{ tab }} <span
-                        v-if="tab === 'Confirmed production fonts'">({{ this.Data1.length }})</span></MtTypography>
+                        v-if="tab === 'Confirmed production fonts'">({{ this.Data6.length }})</span></MtTypography>
             </a>
         </div>
         <div class="content" v-if="activeTab === 'Confirmed production fonts'">
@@ -375,7 +374,7 @@ export default {
                 title="This list contains all approved production fonts that are currently in use by your team members. You can validate them by font style, remove or add new production font to the list."
                 additionalText="Use this list for upcoming winter collection project. This list contains all approved production fonts that are currently in use by your team members. You can validate them by font style, remove or add new production font to the list.This list contains all approved production fonts that are currently in use by your team members. You can validate them by font style, remove or add new production font to the list."
                 :images="imageThumbnails" />
-            <DataTable :data="Data1" :tableHeadings="TableHeadings1" @switch-clicked="handleSwitch" />
+            <DataTable :data="Data6" :tableHeadings="TableHeadings1" @switch-clicked="handleSwitch" />
             <LearnMoreAboutFonts />
         </div>
         <div v-else-if="activeTab === 'Fonts for review'" class="content">
@@ -389,7 +388,7 @@ export default {
                 title="This list contains all fonts for which there is a record of activity - including fonts synced and/or downloaded from Monotype Fonts, fonts for which web page views have been registered, fonts flagged by users, and fonts identified by Monotype's research team."
                 additionalText="Use this list for upcoming winter collection project. This list contains all approved production fonts that are currently in use by your team members. You can validate them by font style, remove or add new production font to the list.This list contains all approved production fonts that are currently in use by your team members. You can validate them by font style, remove or add new production font to the list."
                 :images="imageThumbnails" />
-            <DataTable :data="Data2" :tableHeadings="TableHeadings2" @accept-clicked="openAcceptModal"
+            <DataTable :data="Data5" :tableHeadings="TableHeadings2" @accept-clicked="openAcceptModal"
                 @deny-clicked="openDenyModal" />
             <LearnMoreAboutFonts />
         </div>
@@ -642,7 +641,7 @@ export default {
             <div class="flex flex-row gap-3 mb-6 items-center">
                 <MtTypography v-bind="{ tag: 'span', variant: 'body1--regular' }">Total number of production fonts:
                 </MtTypography>
-                <MtTypography v-bind="{ tag: 'span', variant: 'body1--medium' }">{{ this.Data1.length }} production
+                <MtTypography v-bind="{ tag: 'span', variant: 'body1--medium' }">{{ this.Data6.length }} production
                     fonts used</MtTypography>
             </div>
             <div class="flex gap-3">

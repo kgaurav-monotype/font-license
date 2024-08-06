@@ -29,7 +29,7 @@ export default {
 </script>:class="isSidebarOpen ? 'open' : 'close'"
 
 <template>
-    <div class="notification flex flex-col gap-3 p-6 sticky" :style="{ backgroundColor: typographyColor.bg, top: 0 }">
+    <div class="notification flex flex-col gap-3 p-6" :style="{ backgroundColor: typographyColor.bg, top: 0 }">
         <MtTypography v-bind="{ tag: 'h2', variant: 'heading7--bold', color: typographyColor.text }">{{heading}}</MtTypography>
         <MtTypography v-bind="{ tag: 'p', variant: 'body2--regular', color: typographyColor.text }">{{ message }}</MtTypography>
     </div>

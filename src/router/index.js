@@ -1,17 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import Company from '../views/Company.vue';
+import Home2 from '../views/Home2.vue';
 
 const routes = [
   {
-    path: '/',
+    path: '/font-license/',
     name: 'Home',
     component: Home,
   },
   {
-    path: '/company',
+    path: '/font-license/company',
     name: 'Company',
     component: Company,
+  },
+  {
+    path: '/font-license/home2',
+    name: 'Home2',
+    component: Home2,
   },
 ];
 

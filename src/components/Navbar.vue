@@ -11,8 +11,14 @@ export default {
     MtIconReload,
   },
   methods: {
+    gotoHome() {
+      this.$router.push('/font-license/');
+    },
     goToCompany() {
-      this.$router.push('/company');
+      this.$router.push('/font-license/company');
+    },
+    goToHome2() {
+      this.$router.push('/font-license/home2');
     },
   },
 };
@@ -21,7 +27,7 @@ export default {
 <template>
     <div class="navbar p-6">
         <div class="flex gap-20 items-center">
-            <span class="logo">M.</span>
+            <span class="logo cursor-pointer" @click="gotoHome">M.</span>
             <div class="flex items-center relative">
                 <input type="text" class="searchbar rounded-sm" placeholder="Search for fonts, designers & tags...">
                 <MtIconSearch class="absolute right-4" color="spirits--600"></MtIconSearch>
@@ -30,7 +36,7 @@ export default {
                 <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">Dashboard</MtTypography>
                 <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">Browse</MtTypography>
                 <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">My library</MtTypography>
-                <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">Resources</MtTypography>
+                <MtTypography @click="goToHome2" class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--700' }">Resources</MtTypography>
                 <MtTypography @click="goToCompany" class="relative cursor-pointer" v-bind="{ tag: 'span', variant: 'body1--medium', color: 'spirits--50' }">Manage
                     <span class="absolute bottom-line"></span>
                 </MtTypography>

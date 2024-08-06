@@ -10,5 +10,5 @@ import router from './router';
 createApp(App).use(router).use(ComponentLibrary).mount('#app');
 
 router.isReady().then(() => {
-    router.push('/');
+    router.push('/font-license/');
   });

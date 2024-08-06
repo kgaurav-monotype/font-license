@@ -20,8 +20,8 @@ export default {
       sortKey: '',
       sortDirection: 'asc',
       currentPage: 1,
-      pageSize: 4,
-      pageSizes: [2, 4, 6, 8, 10],
+      pageSize: 10,
+      pageSizes: [10, 20, 30, 40, 50],
       Data1,
       Data2,
     };
@@ -102,7 +102,16 @@ export default {
     },
     handleSwitchClick(row) {
       this.$emit('switch-clicked', row);
-    }
+    },
+    exportReport() {
+            const link = document.createElement("a");
+            link.href = 'https://kgaurav-monotype.github.io/font-license/assets/SampleReport.xlsx';
+            link.setAttribute("download", "SampleReport.xlsx");
+            link.setAttribute("target", "_blank");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        },
   },
 };
 </script>
@@ -126,7 +135,7 @@ export default {
               <MtTypography v-bind="{ tag: 'span', variant: index === 0 ? 'body2--medium' : 'body2--regular' }"><span v-html="row[heading.key].value"></span></MtTypography>
             </template>
             <template v-if="row[heading.key].type === 'link'">
-              <MtTypography class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body2--medium', color: 'blue-duck--500' }">Export report</MtTypography>
+              <MtTypography @click="exportReport" class="cursor-pointer" v-bind="{ tag: 'span', variant: 'body2--medium', color: 'blue-duck--500' }">Export report</MtTypography>
             </template>
             <template v-else-if="row[heading.key].type === 'icon'">
               <div class="flex items-end gap-2">
